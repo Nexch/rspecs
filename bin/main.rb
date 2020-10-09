@@ -1,5 +1,5 @@
 #!/bin/ruby
-
+# rubocop:disable Style/MixinUsage
 require_relative '../lib/logic'
 
 module UserInputs
@@ -115,3 +115,5 @@ end
 include PlayGame
 include UserInputs
 start_game
+
+# rubocop:enable Style/MixinUsage
