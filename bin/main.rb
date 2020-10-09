@@ -1,6 +1,6 @@
-#!/usr/bin/env ruby
+#!/bin/ruby
 
-require './lib/logic'
+require_relative '../lib/logic'
 
 module UserInputs
   def ask_name(num)
@@ -112,13 +112,6 @@ module PlayGame
   end
 end
 
-class GameNew
-  include UserInputs
-  include PlayGame
-
-  def game()
-    start_game
-  end
-end
-
-GameNew.new.game
+include PlayGame
+include UserInputs
+start_game
