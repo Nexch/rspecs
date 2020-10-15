@@ -1,6 +1,6 @@
-#!/usr/bin/env ruby
-
-require './lib/logic'
+#!/bin/ruby
+# rubocop:disable Style/MixinUsage
+require_relative '../lib/logic'
 
 module UserInputs
   def ask_name(num)
@@ -112,13 +112,8 @@ module PlayGame
   end
 end
 
-class GameNew
-  include UserInputs
-  include PlayGame
+include PlayGame
+include UserInputs
+start_game
 
-  def game()
-    start_game
-  end
-end
-
-GameNew.new.game
+# rubocop:enable Style/MixinUsage
